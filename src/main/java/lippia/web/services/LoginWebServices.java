@@ -12,4 +12,12 @@ public class LoginWebServices {
     public static void clickOnLogInButton() {
 
     }
+
+
+
+    //////////////////////////////////////////ZELMICHAT//////////////////////////////////////////////
+
+    public static void paginaLogin() {
+        navigateTo(PropertyManager.getProperty("chat.base.url"));
+    }
 }

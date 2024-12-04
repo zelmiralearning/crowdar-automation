@@ -39,6 +39,11 @@
 		<web.user.email>d.andresperalta@outlook.com</web.user.email>
 		<web.user.password>Zelmira24$</web.user.password>
 
+		<!-- client project custom properties -->
+		<chat.base.url>https://zelmichat.zelmiralearning.com/</chat.base.url>
+		<chat.user.email>cuentaparapruebas933@gmail.com</chat.user.email>
+		<chat.user.password>Contrasena123</chat.user.password>
+
 	</properties>
 	<profiles>
 
