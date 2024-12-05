@@ -40,7 +40,7 @@
 		<web.user.password>Zelmira24$</web.user.password>
 
 		<!-- client project custom properties -->
-		<chat.base.url>https://zelmichat.zelmiralearning.com/</chat.base.url>
+		<chat-base.url>https://zelmichat.zelmiralearning.com/</chat-base.url>
 		<chat.user.email>cuentaparapruebas933@gmail.com</chat.user.email>
 		<chat.user.password>Contrasena123</chat.user.password>
 
@@ -128,11 +128,21 @@
 			<artifactId>core</artifactId>
 			<version>3.3.0.0</version>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>io.lippia.report</groupId>-->
+<!--			<artifactId>ltm-cucumber4-adapter</artifactId>-->
+<!--			<version>1.0.0-SNAPSHOT</version>-->
+<!--		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/io.lippia.report/ltm-cucumber4-adapter -->
 		<dependency>
 			<groupId>io.lippia.report</groupId>
 			<artifactId>ltm-cucumber4-adapter</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.2</version>
 		</dependency>
+
+
 		<dependency>
 			<groupId>io.lippia.report</groupId>
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
