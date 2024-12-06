@@ -6,29 +6,26 @@ import io.cucumber.java.en.When;
 import lippia.web.services.LoginWebServices;
 
 public class LoginWebSteps {
-    @Given("El usuario se encuentra en la pagina de login de Zelmira")
-    public void elUsuarioSeEncuentraEnLaPaginaDeLoginDeZelmira() {
-        LoginWebServices.pageLogin();
+    @Given("El usuario <rol> se encuentra en la página de Login de Zelmira")
+    public void elUsuarioRolSeEncuentraEnLaPáginaDeLoginDeZelmira( String rol) {
+        LoginWebServices.pageLogin(rol);
     }
-
-    @And("El usuario debe contar con credenciales válidas")
-    public void elUsuarioDebeContarConCredencialesVálidas() {
-     
+//@When("^El usuario ingresa el email (.*)")
+    @When("El usuario ingresa su email <email>")
+    public void elUsuarioIngresaElEmail(String email) {
+        LoginWebServices.setEmail(email);
     }
-
-    @When("El usuario ingresa el email")
-    public void elUsuarioIngresaElEmail() {
-
+    @And("El usuario ingresa su contraseña <password>")
+    public void elUsuarioIngresaSuContraseñaPassword(String password) {
+        LoginWebServices.setPassword(password);
     }
-
-    @Then("El usuario es redirigido al Dashboard")
-    public void elUsuarioEsRedirigidoAlDashboard() {
-
+    @And("El usuario hace clic en el botón Ingresar")
+    public void elUsuarioHaceClicEnElBotónIngresar() {
+        LoginWebServices.clickOnEnterButton();
     }
-
-    @And("El usuario hace click en el botón Ingresar")
-    public void elUsuarioHaceClickEnElBotónIngresar() {
-        LoginWebServices.clickOnLogInButton();
+    @Then("El usuario es redirigido a la vista <view>")
+    public void elUsuarioEsRedirigidoALaVistaView(String view) {
+        LoginWebServices.validateView(view);
     }
 
 }
