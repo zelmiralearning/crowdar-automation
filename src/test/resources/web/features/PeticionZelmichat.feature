@@ -14,19 +14,19 @@ Feature: Peticion Zelmichat
     And el usuario ve la actividad "<Actividad>" selecionada
     And el usuario hace click en el boton Aceptar de la actividad seleccionada
     And no se encuentra visible el popup de actividades
-    #And el usuario hace click en el boton "Seleccionar manual"
-    #And el usuario selecciona <SeleccionManual>
-    #And el usuario hace click en el boton "Seleccionar tipo de teoria"
-    #And el usuario selecciona <TipoDeTeoria>
-    #And el usuario hace click en el boton "Seleccionar color de adaptación"
-    #And el usuario selecciona <Color>
-    #And el usuario ingresa <Peticion> en la casilla
+    And el usuario hace click en el boton Seleccionar manual
+    And el usuario selecciona "<SeleccionManual>"
+    And el usuario hace click en el boton Seleccionar tipo de teoria
+    And el usuario selecciona el tipo de teoria "<TipoDeTeoria>"
+    And el usuario hace click en el boton Seleccionar color de adaptacion
+    And el usuario selecciona el color "<Color>"
+    And el usuario ingresa "<Peticion>" en la casilla
     #And el usuario hace click en el boton "Enviar"
     #Then se crea la peticion luego de unos segundos
 
     Examples:
       | Actividad         | SeleccionManual    | nombreArchivo     | nomImagen  | TipoDeTeoria | Color | Peticion              |
-      | Verdadero o falso | Muy significativas | 5gradoZelmira.pdf | lengua.png | Parrafo      | Azul  | Adaptar esta peticion |
+      | Verdadero o falso | Muy significativas | 5gradoZelmira.pdf | lengua.png | Parrafo      | Rojo  | Adaptar esta peticion |
       #| A completar       | Significativas      | Sin teoria   | Verde    | Adaptar esta peticion |
-      #| Unir con flechas  | Poco significativas | Parrafo      | Rojo     | Adaptar esta peticion |
+      #| Unir con flechas  | Poco significativas | Parrafo      | Azul     | Adaptar esta peticion |
       #| Opcion multiple   | Aplicar plantilla   | Sin teoria   | Amarillo | Adaptar esta peticion |

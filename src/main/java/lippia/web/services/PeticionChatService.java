@@ -2,8 +2,11 @@ package lippia.web.services;
 
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.WebActionManager;
+import com.crowdar.driver.DriverManager;
 import lippia.web.constants.PeticionChatConstants;
+import lippia.web.utils.ColorPicker;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
@@ -85,5 +88,40 @@ public class PeticionChatService {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public static void ClickBtnSeleccManual() {
+        WebActionManager.click(PeticionChatConstants.BTN_SELECCION_MANUAL);
+    }
+
+    public static void seleccionManual(String seleccManual) {
+        WebActionManager.waitVisibility(String.format(PeticionChatConstants.LBL_SELECCIONAR_MANUAL, seleccManual)).click();
+    }
+
+    public static void clickBtnSeleccionarTipoDeTeoria() {
+        WebActionManager.click(PeticionChatConstants.BTN_SELECCION_TIPO_TEORIA);
+    }
+
+    public static void seleccionaElTipoDeTeoria(String tipoTeoria) {
+        WebActionManager.waitVisibility(String.format(PeticionChatConstants.LBL_SELECCIONAR_TIPO_TEORIA, tipoTeoria)).click();
+    }
+
+    public static void clickBtnSelecColorAdaptacion() {
+        WebActionManager.click(PeticionChatConstants.BTN_SELECCION_COLOR_ADAPTACION);
+    }
+
+    public static void seleccionaColor(String color) {
+        String codiColor = ColorPicker.getColorCode(color);
+        WebElement inputColor = WebActionManager.getElement(PeticionChatConstants.INPUT_COLOR);
+
+        // Usa JavaScript para asignar el valor
+        ((JavascriptExecutor) DriverManager.getDriverInstance()).executeScript("arguments[0].value = '" + codiColor + "';", inputColor);
+
+    }
+
+    public static void ingresaComandoAdaptacion(String peticion) {
+        WebElement txtArea = WebActionManager.getElement(PeticionChatConstants.TXT_COMANDO_PETICION);
+        txtArea.click();
+        txtArea.sendKeys(peticion);
     }
 }

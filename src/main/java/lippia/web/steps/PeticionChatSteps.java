@@ -59,4 +59,39 @@ public class PeticionChatSteps {
     public void noSeEncuentraVisibleElPopupDeActividades() {
         Assert.assertFalse("[WARNING] El popup de las Actividades esta visible, cuando no deberia estar",PeticionChatService.verPopUpActividades());
     }
+
+    @And("el usuario hace click en el boton Seleccionar manual")
+    public void elUsuarioHaceClickEnElBotonSeleccionarManual() {
+        PeticionChatService.ClickBtnSeleccManual();
+    }
+
+    @And("el usuario selecciona {string}")
+    public void elUsuarioSelecciona(String seleccManual) {
+        PeticionChatService.seleccionManual(seleccManual);
+    }
+
+    @And("el usuario hace click en el boton Seleccionar tipo de teoria")
+    public void elUsuarioHaceClickEnElBotonSeleccionarTipoDeTeoria() {
+        PeticionChatService.clickBtnSeleccionarTipoDeTeoria();
+    }
+
+    @And("el usuario selecciona el tipo de teoria {string}")
+    public void elUsuarioSeleccionaElTipoDeTeoria(String tipoTeoria) {
+        PeticionChatService.seleccionaElTipoDeTeoria( tipoTeoria);
+    }
+
+    @And("el usuario hace click en el boton Seleccionar color de adaptacion")
+    public void elUsuarioHaceClickEnElBotonSeleccionarColorDeAdaptacion() {
+        PeticionChatService.clickBtnSelecColorAdaptacion();
+    }
+
+    @And("el usuario selecciona el color {string}")
+    public void elUsuarioSeleccionaElColor(String color) {
+        PeticionChatService.seleccionaColor(color);
+    }
+
+    @And("el usuario ingresa {string} en la casilla")
+    public void elUsuarioIngresaEnLaCasilla(String peticion) {
+        PeticionChatService.ingresaComandoAdaptacion(peticion);
+    }
 }

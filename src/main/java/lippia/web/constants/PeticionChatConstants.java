@@ -16,4 +16,12 @@ public class PeticionChatConstants {
     public static final String LBL_ACTIVIDAD_SELECCIONADA = "xpath://p[contains(text(), '%s')]";
     public static final String BTN_ACEPTAR_ACTIVIDAD_SELECCIONADA = "xpath://button[@class='commons_greenButton__kJQpj' and contains(text(), 'Aceptar')]";
     public static final String LBL_POPUP_ACTIVIDADES = "xpath://p[@class='chatInput_modalTitle__0fa2Z' and contains(text(), 'Actividades')]";
+    public static final String BTN_SELECCION_MANUAL = "xpath:(//div[@class='chatInput_inputButtonContainer__R_wAx'])[4]";
+    public static final String LBL_SELECCIONAR_MANUAL = "xpath://div[@class='chatInput_selectManualButton__bfvXi']//p[text()='%s']";
+    public static final String BTN_SELECCION_TIPO_TEORIA ="xpath:(//div[@class='chatInput_inputButtonContainer__R_wAx'])[5]";
+    public static final String LBL_SELECCIONAR_TIPO_TEORIA ="xpath://div[@class='chatInput_selectManualButton__bfvXi']//p[text()='%s']" ;
+    public static final String BTN_SELECCION_COLOR_ADAPTACION ="xpath:(//div[@class='chatInput_inputButtonContainer__R_wAx'])[6]";
+    public static final String INPUT_COLOR = "xpath://input[@type='color']";
+    public static final String TXT_COMANDO_PETICION = "xpath://textarea[@name=\"textarea\"]";
+    ;
 }
