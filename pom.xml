@@ -35,7 +35,14 @@
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>https://preprod-super-admin.zelmiralearning.com/login</web-app.url>
+		<web.user.email>d.andresperalta@outlook.com</web.user.email>
+		<web.user.password>Zelmira24$</web.user.password>
+
+		<!-- client project custom properties -->
+		<chat-base.url>https://zelmichat.zelmiralearning.com/</chat-base.url>
+		<chat.user.email>cuentaparapruebas933@gmail.com</chat.user.email>
+		<chat.user.password>Contrasena123</chat.user.password>
 
 	</properties>
 	<profiles>
@@ -121,11 +128,21 @@
 			<artifactId>core</artifactId>
 			<version>3.3.0.0</version>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>io.lippia.report</groupId>-->
+<!--			<artifactId>ltm-cucumber4-adapter</artifactId>-->
+<!--			<version>1.0.0-SNAPSHOT</version>-->
+<!--		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/io.lippia.report/ltm-cucumber4-adapter -->
 		<dependency>
 			<groupId>io.lippia.report</groupId>
 			<artifactId>ltm-cucumber4-adapter</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.2</version>
 		</dependency>
+
+
 		<dependency>
 			<groupId>io.lippia.report</groupId>
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
@@ -162,9 +179,8 @@
 
 	<repositories>
 		<repository>
-			<id>crowdarRepo</id>
-			<name>crowdar-repository</name>
-			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
 
