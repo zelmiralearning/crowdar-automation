@@ -4,13 +4,16 @@ Feature: Peticion Zelmichat
   @PeticionExitosaZelmichat @Smoke @ReadyToAutomate
   Scenario Outline: Realizar una peticion en Zelmichat de manera exitosa
     Given el usuarios se encuentra logueado en Zelmichat
-    When el usuario hace click en el boton de "Cargar archivo"
-    #And el usuario selecciona un archivo
-    #And el usuario hace click en el boton "Cargar imagen complementaria"
-    #And el usuario selecciona un archivo
-    #And el usuario hace click en el boton "Seleccionar actividades"
-    #And el usuario selecciona <Actividad>
-    #And el usuario hace click en el boton "Aceptar"
+    When el usuario carga el archivo "<nombreArchivo>"
+    And el usuario ve cargado el archivo "<nombreArchivo>"
+    And el usuario carga la imagen "<nomImagen>"
+    And el usuario ve cargado el archivo "<nomImagen>"
+    And el usuario hace click en el boton Seleccionar actividades
+    And el usuario ve el popup de las Actividades
+    And el usuario selecciona la "<Actividad>"
+    And el usuario ve la actividad "<Actividad>" selecionada
+    And el usuario hace click en el boton Aceptar de la actividad seleccionada
+    And no se encuentra visible el popup de actividades
     #And el usuario hace click en el boton "Seleccionar manual"
     #And el usuario selecciona <SeleccionManual>
     #And el usuario hace click en el boton "Seleccionar tipo de teoria"
@@ -22,8 +25,8 @@ Feature: Peticion Zelmichat
     #Then se crea la peticion luego de unos segundos
 
     Examples:
-      | Actividad         | SeleccionManual     | TipoDeTeoria | Color    | Peticion              |
-      | Verdadero o falso | Muy significativas  | Parrafo      | Azul     | Adaptar esta peticion |
+      | Actividad         | SeleccionManual    | nombreArchivo     | nomImagen  | TipoDeTeoria | Color | Peticion              |
+      | Verdadero o falso | Muy significativas | 5gradoZelmira.pdf | lengua.png | Parrafo      | Azul  | Adaptar esta peticion |
       #| A completar       | Significativas      | Sin teoria   | Verde    | Adaptar esta peticion |
       #| Unir con flechas  | Poco significativas | Parrafo      | Rojo     | Adaptar esta peticion |
       #| Opcion multiple   | Aplicar plantilla   | Sin teoria   | Amarillo | Adaptar esta peticion |
