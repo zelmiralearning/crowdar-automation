@@ -23,7 +23,6 @@ Feature: Peticion Zelmichat
     And el usuario ingresa "<Peticion>" en la casilla
     And el usuario hace click en el boton Enviar
     Then se crea la peticion luego de unos segundos
-
     Examples:
       | Actividad         | SeleccionManual     | nombreArchivo     | nomImagen  | TipoDeTeoria | Color    | Peticion              |
       | Verdadero o falso | Muy significativas  | 5gradoZelmira.pdf | lengua.png | Parrafo      | Rojo     | Adaptar esta peticion |
