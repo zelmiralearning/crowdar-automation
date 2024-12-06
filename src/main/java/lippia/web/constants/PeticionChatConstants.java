@@ -23,5 +23,6 @@ public class PeticionChatConstants {
     public static final String BTN_SELECCION_COLOR_ADAPTACION ="xpath:(//div[@class='chatInput_inputButtonContainer__R_wAx'])[6]";
     public static final String INPUT_COLOR = "xpath://input[@type='color']";
     public static final String TXT_COMANDO_PETICION = "xpath://textarea[@name=\"textarea\"]";
+    public static final String BTN_ENVIAR_PETICION = "xpath://img[@class=\"chatInput_hoverIcon__o_iCp\" and @alt=\"submit-request-button\"]";
     ;
 }

@@ -124,4 +124,8 @@ public class PeticionChatService {
         txtArea.click();
         txtArea.sendKeys(peticion);
     }
+
+    public static void clickBtnEnviarPeticion() {
+        WebActionManager.waitClickable(PeticionChatConstants.BTN_ENVIAR_PETICION).click();
+    }
 }

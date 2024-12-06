@@ -94,4 +94,14 @@ public class PeticionChatSteps {
     public void elUsuarioIngresaEnLaCasilla(String peticion) {
         PeticionChatService.ingresaComandoAdaptacion(peticion);
     }
+
+    @And("el usuario hace click en el boton Enviar")
+    public void elUsuarioHaceClickEnElBotonEnviar() {
+        PeticionChatService.clickBtnEnviarPeticion();
+    }
+
+    @Then("se crea la peticion luego de unos segundos")
+    public void seCreaLaPeticionLuegoDeUnosSegundos() {
+        System.out.println("");
+    }
 }
