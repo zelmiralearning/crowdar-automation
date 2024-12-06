@@ -1,6 +1,5 @@
 package lippia.web.services;
 import com.crowdar.core.PropertyManager;
-import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.LoginWebConstants;
 
@@ -38,14 +37,16 @@ public class LoginWebServices {
 
     public static void validateView(String view) {
         String viewToValidate;
-        switch (view) {
-            case "Alumno":
-                viewToValidate=LoginWebConstants.VALIDATE_MY_INFORMATION;
-                break;
-            default:
+        if (view.toLowerCase().equals("alumno")) {
+            viewToValidate = LoginWebConstants.VALIDATE_MY_INFORMATION;
+        }else{
                 viewToValidate=LoginWebConstants.VALIDATE_DASHBOARD;
         }
         WebActionManager.waitVisibility(viewToValidate);
         ResultsService.verifyActionResult(viewToValidate);
+    }
+
+    public static void clickOnRememberCredentials() {
+        click(LoginWebConstants.LOGIN_CHECKBOX);
     }
 }

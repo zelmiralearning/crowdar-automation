@@ -6,26 +6,35 @@ import io.cucumber.java.en.When;
 import lippia.web.services.LoginWebServices;
 
 public class LoginWebSteps {
-    @Given("El usuario <rol> se encuentra en la página de Login de Zelmira")
-    public void elUsuarioRolSeEncuentraEnLaPáginaDeLoginDeZelmira( String rol) {
-        LoginWebServices.pageLogin(rol);
+
+    @Given("El usuario {string} se encuentra en la página de Login de Zelmira")
+    public void elUsuarioSeEncuentraEnLaPáginaDeLoginDeZelmira(String role) {
+        LoginWebServices.pageLogin(role);
     }
-//@When("^El usuario ingresa el email (.*)")
-    @When("El usuario ingresa su email <email>")
-    public void elUsuarioIngresaElEmail(String email) {
+
+    @When("El usuario ingresa su email {string}")
+    public void elUsuarioIngresaSuEmail(String email) {
         LoginWebServices.setEmail(email);
     }
-    @And("El usuario ingresa su contraseña <password>")
-    public void elUsuarioIngresaSuContraseñaPassword(String password) {
+
+    @And("El usuario ingresa su contraseña {string}")
+    public void elUsuarioIngresaSuContraseña(String password) {
         LoginWebServices.setPassword(password);
     }
+
     @And("El usuario hace clic en el botón Ingresar")
     public void elUsuarioHaceClicEnElBotónIngresar() {
         LoginWebServices.clickOnEnterButton();
     }
-    @Then("El usuario es redirigido a la vista <view>")
-    public void elUsuarioEsRedirigidoALaVistaView(String view) {
+
+    @Then("El usuario es redirigido a la vista {string}")
+    public void elUsuarioEsRedirigidoALaVista(String view) {
         LoginWebServices.validateView(view);
+    }
+
+    @And("El usuario hace click en el checkbox Recordar Contraseña")
+    public void elUsuarioHaceClickEnElCheckboxRecordarContraseña() {
+        LoginWebServices.clickOnRememberCredentials();
     }
 
 }
